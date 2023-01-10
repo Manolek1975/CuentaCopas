@@ -27,12 +27,15 @@
     <string name="vol_bebida_hint">Volumen cl</string>
     <string name="precio_bebida_hint">Precio €</string>
 
-
     <string name="crear_bebida">Crear Bebida</string>
     <string name="tasa">0%</string>
     <string name="precio">0€</string>
     <string name="tiempo">Lapso: 6h</string>
     <string name="test">Test</string>
+    <string name="seleccione_una_imagen">Seleccione una imagen</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="todo">TODO</string>
 
     <string-array name="name_array">
         <item>Cerveza</item>

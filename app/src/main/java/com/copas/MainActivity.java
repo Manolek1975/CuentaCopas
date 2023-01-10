@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Historico historico;
     private SeekBar seekbar;
-    private int lapso, peso, altura;
+    private int lapso;
+    private int altura;
     private double tasaTotal, precioTotal;
 
 
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         //graduacion = graduacion / 100; // Porcentaje
         //volumen = volumen * 10; // En mililitros
         SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
-        peso = Integer.parseInt(data.getString("peso", ""));
+        int peso = Integer.parseInt(data.getString("peso", ""));
         altura = Integer.parseInt(data.getString("altura", ""));
         TextView tasaText = findViewById(R.id.tasaTotal);
         TextView precioText = findViewById(R.id.precioTotal);

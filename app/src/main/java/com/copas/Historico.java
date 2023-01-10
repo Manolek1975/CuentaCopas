@@ -20,9 +20,7 @@ import java.util.Locale;
 public class Historico {
 
     public static final int ONE_DAY = 86400000; //24h  *  60m  *  60s  *  1000ms   =  86400000
-    private Date dateNow, date;
-    private int hour;
-    private int term;
+    private Date date;
     private int drink;
 
     public Historico(){
@@ -31,8 +29,6 @@ public class Historico {
 
     public Historico(Date date, int hour, int term, int drink) {
         this.date = date;
-        this.hour = hour;
-        this.term = term;
         this.drink = drink;
     }
 
@@ -55,9 +51,11 @@ public class Historico {
         // Comparar fecha
         Calendar validDate = new GregorianCalendar();
         validDate.setTime(date);
+/*
         if (Calendar.getInstance().after(validDate)) {
-            //catalog_outdated = 1;
+            Log.i("Date_after", "AFER");
         }
+*/
 
         //Log.i("date1", formattedDate+" "+ formattedHour );
         //Log.i("date2", String.valueOf(date) );
@@ -74,14 +72,14 @@ public class Historico {
     }
 
     public List<Bebidas> getHistorico(Context context, int lapso){
-        dateNow = Calendar.getInstance().getTime();
+        Date dateNow = Calendar.getInstance().getTime();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(dateNow); // Configuramos la fecha que se recibe
         calendar.add(Calendar.HOUR, - lapso);  // numero de horas a añadir, o restar en caso de horas<0
         date = calendar.getTime(); // Devuelve el objeto Date con las nuevas horas añadidas
 
         SimpleDateFormat standar = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String now = standar.format( dateNow );
+        String now = standar.format(dateNow);
         String dateDrink = standar.format( date );
         Log.i("date", "Fecha: " + date + " - " + dateNow);
 
@@ -118,6 +116,7 @@ public class Historico {
             }
             Log.i("historico", val.drink + "");
         }
+        c.close();
         db.close();
         return bebidas;
 

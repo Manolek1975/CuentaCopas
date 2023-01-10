@@ -7,6 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +21,7 @@ public class FormActivity extends AppCompatActivity {
     private EditText tasa;
     private EditText volumen;
     private EditText precio;
+    private ImageView image;
 
 
     @SuppressLint("SetTextI18n")
@@ -27,10 +31,12 @@ public class FormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_form);
 
         Button btnSave = findViewById(R.id.btnGuardar);
+        ImageButton papelera = findViewById(R.id.btnPapelera);
         name = findViewById(R.id.nombre);
         tasa = findViewById(R.id.tasa);
         volumen = findViewById(R.id.volumen);
         precio = findViewById(R.id.precio);
+        image = findViewById(R.id.imageViewBebida);
 
         Intent i = getIntent();
         Bundle crud = i.getExtras();
@@ -39,6 +45,7 @@ public class FormActivity extends AppCompatActivity {
         if (bebida == null){
             this.setTitle("Crear Bebida");
             btnSave.setText("Crear");
+            papelera.setVisibility(View.INVISIBLE);
         } else {
             this.setTitle("Modificar Bebida");
             btnSave.setText("Modificar");
@@ -49,14 +56,11 @@ public class FormActivity extends AppCompatActivity {
         }
 
 
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (bebida == null){
-                    crearBebida();
-                } else {
-                    updateBebida();
-                }
+        btnSave.setOnClickListener(v -> {
+            if (bebida == null){
+                crearBebida();
+            } else {
+                updateBebida();
             }
         });
 
@@ -91,8 +95,36 @@ public class FormActivity extends AppCompatActivity {
         runBebidas();
     }
 
-    public void onRadioButtonClicked(View view){
-
+    public void onRadioButtonClicked(View v) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) v).isChecked();
+        // Check which radio button was clicked
+        switch(v.getId()) {
+            case R.id.radioButtonCerveza:
+                    imageName = "cerveza";
+                    image.setImageResource(R.drawable.cerveza);
+                break;
+            case R.id.radioButtonVino:
+                    imageName =  "vino";
+                    image.setImageResource(R.drawable.vino);
+                break;
+            case R.id.radioButtonVermu:
+                    imageName =  "vermu";
+                    image.setImageResource(R.drawable.vermut);
+                break;
+            case R.id.radioButtonLicor:
+                    imageName =  "licor";
+                    image.setImageResource(R.drawable.licor);
+                break;
+            case R.id.radioButtonBrandy:
+                    imageName =  "brandy";
+                    image.setImageResource(R.drawable.brandy);
+                break;
+            case R.id.radioButtonCombinado:
+                    imageName =  "combinado";
+                    image.setImageResource(R.drawable.combinado);
+                break;
+        }
     }
 
     public void runBebidas(){

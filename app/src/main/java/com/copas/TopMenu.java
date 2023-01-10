@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class TopMenu extends AppCompatActivity {
 
-    private Context context;
+    private final Context context;
 
     public TopMenu(Context context){
         this.context = context;
@@ -17,22 +17,22 @@ public class TopMenu extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem option) {
         int id = option.getItemId();
         if (id == R.id.menu_perfil || id == R.id.icon_menu_perfil){
-            runPerfil(null);
+            runPerfil();
             return true;
         }
         if (id == R.id.menu_bebidas || id == R.id.icon_menu_bebidas){
-            runBebidas(null);
+            runBebidas();
             return true;
         }
         return super.onOptionsItemSelected(option);
     }
 
-    private void runPerfil(Object o) {
+    private void runPerfil() {
         Intent i =  new Intent(context, PerfilActivity.class);
         context.startActivity(i);
     }
 
-    private void runBebidas(Object o) {
+    private void runBebidas() {
         Intent i =  new Intent(context, BebidasActivity.class);
         context.startActivity(i);
     }
