@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">Cuenta Copas</string>
+    <string name="addButton">Añadir consumición</string>
+    <string name="dialog_title">No existe Perfil</string>
+    <string name="dialog_message">Debes crear primero un perfil, necesitamos tu peso y altura
+        para calcular la tasa de alcoholemia lo mejor posible.</string>
+
+    <string name="menu_perfil">Perfil</string>
+    <string name="menu_bebidas">Bebidas</string>
+    <string name="menu_addbebida">Consumición</string>
+    <string name="menu_crearbebida">Editar Bebida</string>
+    <string name="menu_historico">Resumen</string>
+    <string name="menu_info">Info</string>
+
+    <string name="guardar_btn">Guardar</string>
+    <string name="borrar_btn">Eliminar</string>
+
+    <string name="tasa_main">Tasa Alcoholemia</string>
+
+    <string name="name_hint">Nombre</string>
+    <string name="edad_hint">Edad</string>
+    <string name="peso_hint">Peso (kg)</string>
+    <string name="altura_hint">Altura (cm)</string>
+
+    <string name="name_bebida_hint">Nombre Bebida</string>
+    <string name="tasa_bebida_hint">Tasa %</string>
+    <string name="vol_bebida_hint">Volumen cl</string>
+    <string name="precio_bebida_hint">Precio €</string>
+
+
+    <string name="crear_bebida">Crear Bebida</string>
+    <string name="tasa">0%</string>
+    <string name="precio">0€</string>
+    <string name="tiempo">Lapso: 6h</string>
+    <string name="test">Test</string>
+
+    <string-array name="name_array">
+        <item>Cerveza</item>
+        <item>Vino</item>
+        <item>Vermut</item>
+        <item>Licor</item>
+        <item>Brandy</item>
+        <item>Combinado</item>
+    </string-array>
+
+    <string-array name="tasa_array">
+        <item>5</item>
+        <item>12</item>
+        <item>15</item>
+        <item>30</item>
+        <item>38</item>
+        <item>43</item>
+    </string-array>
+
+    <string-array name="volumen_array">
+        <item>33</item>
+        <item>10</item>
+        <item>15</item>
+        <item>10</item>
+        <item>10</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="precio_array">
+        <item>250</item>
+        <item>240</item>
+        <item>280</item>
+        <item>250</item>
+        <item>300</item>
+        <item>700</item>
+    </string-array>
+
+    <string-array name="image_array">
+        <item>cerveza</item>
+        <item>vino</item>
+        <item>vermut</item>
+        <item>licor</item>
+        <item>brandy</item>
+        <item>combinado</item>
+    </string-array>
+
+
+</resources>
