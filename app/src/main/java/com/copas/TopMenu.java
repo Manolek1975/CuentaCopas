@@ -24,11 +24,15 @@ public class TopMenu extends AppCompatActivity {
             runBebidas();
             return true;
         }
+        if (id == R.id.menu_historico || id == R.id.icon_menu_historico){
+            runHistorico();
+            return true;
+        }
         return super.onOptionsItemSelected(option);
     }
 
-    private void runPerfil() {
-        Intent i =  new Intent(context, PerfilActivity.class);
+    private void runHistorico() {
+        Intent i =  new Intent(context, historicActivity.class);
         context.startActivity(i);
     }
 
@@ -36,4 +40,11 @@ public class TopMenu extends AppCompatActivity {
         Intent i =  new Intent(context, BebidasActivity.class);
         context.startActivity(i);
     }
+
+    private void runPerfil() {
+        Intent i =  new Intent(context, PerfilActivity.class);
+        context.startActivity(i);
+    }
+
+
 }

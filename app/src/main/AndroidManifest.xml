@@ -49,6 +49,11 @@
             android:parentActivityName=".BebidasActivity"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
 
+        <activity android:name=".historicActivity"
+            android:label="@string/menu_historico"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+
     </application>
 
 </manifest>
