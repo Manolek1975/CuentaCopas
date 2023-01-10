@@ -39,12 +39,13 @@ public class FormActivity extends AppCompatActivity {
         image = findViewById(R.id.imageViewBebida);
 
         Intent i = getIntent();
-        Bundle crud = i.getExtras();
+        //Bundle crud = i.getExtras();
         bebida = (Bebidas) i.getSerializableExtra("bebida");
 
         if (bebida == null){
             this.setTitle("Crear Bebida");
             btnSave.setText("Crear");
+            image.setImageResource(R.drawable.cerveza);
             papelera.setVisibility(View.INVISIBLE);
         } else {
             this.setTitle("Modificar Bebida");
@@ -53,6 +54,7 @@ public class FormActivity extends AppCompatActivity {
             tasa.setText(Float.toString(bebida.getTasa()));
             volumen.setText(Float.toString(bebida.getVol()));
             precio.setText(Double.toString(bebida.getPrecio() / 100));
+            image.setImageResource(this.getResources().getIdentifier(bebida.getImage(), "drawable", getPackageName()));
         }
 
 
@@ -90,7 +92,6 @@ public class FormActivity extends AppCompatActivity {
     }
 
     public void deleteBebida(View view){
-        //Bebidas bebida = new Bebidas();
         bebida.deleteBebida(this, bebida.getId());
         runBebidas();
     }
@@ -100,27 +101,27 @@ public class FormActivity extends AppCompatActivity {
         boolean checked = ((RadioButton) v).isChecked();
         // Check which radio button was clicked
         switch(v.getId()) {
-            case R.id.radioButtonCerveza:
+            case (R.id.radioButtonCerveza):
                     imageName = "cerveza";
                     image.setImageResource(R.drawable.cerveza);
                 break;
-            case R.id.radioButtonVino:
+            case (R.id.radioButtonVino):
                     imageName =  "vino";
                     image.setImageResource(R.drawable.vino);
                 break;
-            case R.id.radioButtonVermu:
+            case (R.id.radioButtonVermu):
                     imageName =  "vermu";
                     image.setImageResource(R.drawable.vermut);
                 break;
-            case R.id.radioButtonLicor:
+            case (R.id.radioButtonLicor):
                     imageName =  "licor";
                     image.setImageResource(R.drawable.licor);
                 break;
-            case R.id.radioButtonBrandy:
+            case (R.id.radioButtonBrandy):
                     imageName =  "brandy";
                     image.setImageResource(R.drawable.brandy);
                 break;
-            case R.id.radioButtonCombinado:
+            case (R.id.radioButtonCombinado):
                     imageName =  "combinado";
                     image.setImageResource(R.drawable.combinado);
                 break;
@@ -129,6 +130,11 @@ public class FormActivity extends AppCompatActivity {
 
     public void runBebidas(){
         Intent intent = new Intent(FormActivity.this, BebidasActivity.class);
+        startActivity(intent);
+    }
+
+    public void runCancelar(View v){
+        Intent intent = new Intent(FormActivity.this, MainActivity.class);
         startActivity(intent);
     }
 
