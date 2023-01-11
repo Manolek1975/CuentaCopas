@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         double tasa = alcoholPuroIngerido / (peso * 0.7);
         tasaTotal = tasaTotal + tasa;
         precioTotal = precioTotal + bebida.getPrecio() / 100;
-        tasaText.setText(String.format("%s%%", String.format("%.2f", tasaTotal)));
+        tasaText.setText(String.format("%.2f", tasaTotal));
         precioText.setText(String.format("%s€", String.format("%.2f", precioTotal)));
         setTasaColor(tasaTotal);
         //Log.i("LIST calculoTasa: ", "tasa:" + tasa + " masa:" + masa + " alcoholpuroingerido:" + alcoholPuroIngerido);
@@ -87,10 +87,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setTasaColor(Double tasa) {
-        TextView tasaText = findViewById(R.id.tasaTotal);
-        if(tasa <= 0.2) tasaText.setTextColor(Color.GREEN);
-        if(tasa > 0.2 && tasa < 0.5) tasaText.setTextColor(Color.YELLOW);
-        if(tasa >= 0.5) tasaText.setTextColor(Color.RED);
+        TextView tasaTotal = findViewById(R.id.tasaTotal);
+        TextView gl = findViewById(R.id.gl);
+        if(tasa <= 0.2){
+            tasaTotal.setTextColor(Color.GREEN);
+            gl.setTextColor(Color.GREEN);
+        }
+        if(tasa > 0.2 && tasa < 0.5){
+            tasaTotal.setTextColor(Color.YELLOW);
+            gl.setTextColor(Color.YELLOW);
+        }
+        if(tasa >= 0.5){
+            tasaTotal.setTextColor(Color.RED);
+            gl.setTextColor(Color.RED);
+        }
     }
 
     private void showBebidas() {

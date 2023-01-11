@@ -30,7 +30,8 @@
     <string name="precio_bebida_hint">Precio €</string>
 
     <string name="crear_bebida">Crear Bebida</string>
-    <string name="tasa">0%</string>
+    <string name="tasa">0</string>
+    <string name="gl">g/l</string>
     <string name="precio">0€</string>
     <string name="tiempo">Lapso: 6h</string>
     <string name="test">Test</string>

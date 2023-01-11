@@ -127,6 +127,7 @@ public class Bebidas implements IBebidas, Serializable {
         values.put(DBBebidas.COLUMN_TASA, bebida.getTasa());
         values.put(DBBebidas.COLUMN_VOLUMEN, bebida.getVol());
         values.put(DBBebidas.COLUMN_PRECIO, bebida.getPrecio());
+        values.put(DBBebidas.COLUMN_IMAGE, bebida.getImage());
 
         db.update("bebidas", values,"id=" + bebida.getId(), null);
         db.close();
