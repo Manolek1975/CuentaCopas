@@ -4,11 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.text.format.Time;
 import android.util.Log;
-
-
-import java.lang.invoke.ConstantCallSite;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -19,37 +15,25 @@ import java.util.Locale;
 
 public class Historico {
 
-    public static final int ONE_DAY = 86400000; //24h  *  60m  *  60s  *  1000ms   =  86400000
+    //public static final int ONE_DAY = 86400000; //24h  *  60m  *  60s  *  1000ms   =  86400000
     private Date date;
     private String fecha;
-    private int hour;
-    private int term;
     private int drink;
-
 
     public Historico(){
         super();
-    }
-
-    public Historico(Date date, int hour, int term, int drink) {
-        this.date = date;
-        this.drink = drink;
     }
 
     public Historico(int drink) {
         this.drink = drink;
     }
 
-    public Historico(int id, String fecha, int hour, int term, int drink) {
+    public Historico(String fecha, int drink) {
         this.fecha = fecha;
-        this.hour = hour;
-        this.term = term;
         this.drink = drink;
-
     }
 
     public void setHistorico(Context context, int id){
-        Log.i("ID", id + "");
         DBHelper helper = new DBHelper(context);
         SQLiteDatabase db = helper.getWritableDatabase();
 
@@ -63,14 +47,6 @@ public class Historico {
         // Comparar fecha
         Calendar validDate = new GregorianCalendar();
         validDate.setTime(date);
-/*
-        if (Calendar.getInstance().after(validDate)) {
-            Log.i("Date_after", "AFER");
-        }
-*/
-
-        //Log.i("date1", formattedDate+" "+ formattedHour );
-        //Log.i("date2", String.valueOf(date) );
 
         ContentValues values = new ContentValues();
             values.put(DBHistorico.COLUMN_DATE, formattedDate);
@@ -78,7 +54,6 @@ public class Historico {
             values.put(DBHistorico.COLUMN_TERM, 0);
             values.put(DBHistorico.COLUMN_DRINK, id);
 
-            //Log.i("date3", Calendar.getInstance().getTime() + "");
         db.insert(DBHistorico.TABLE_NAME, null, values);
         db.close();
     }
@@ -139,12 +114,8 @@ public class Historico {
         Cursor c = db.rawQuery("SELECT * FROM historico", null);
         while (c.moveToNext()) {
             Historico h = new Historico(
-                    c.getInt(0),
                     c.getString(1),
-                    c.getInt(2),
-                    c.getInt(3),
                     c.getInt(4)
-
             );
             historico.add(h);
         }
@@ -155,14 +126,6 @@ public class Historico {
 
     public String getFecha() {
         return fecha;
-    }
-
-    public int getHour() {
-        return hour;
-    }
-
-    public int getTerm() {
-        return term;
     }
 
     public int getDrink() {

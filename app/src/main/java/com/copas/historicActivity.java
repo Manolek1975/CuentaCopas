@@ -1,20 +1,14 @@
 package com.copas;
 
-import static java.lang.String.format;
-
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 public class historicActivity extends AppCompatActivity {
 

@@ -1,11 +1,7 @@
 package com.copas;
 
-import static java.lang.String.valueOf;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -60,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //TODO Translate to English
         showBebidas();
 
     }
@@ -71,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
         int peso = Integer.parseInt(data.getString("peso", ""));
         int altura = Integer.parseInt(data.getString("altura", ""));
+
         TextView tasaText = findViewById(R.id.tasaTotal);
         TextView precioText = findViewById(R.id.precioTotal);
         double alcoholPuroIngerido = (bebida.getTasa() * bebida.getVol() * 0.8) / 10;
@@ -166,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
 
                 })
                 .show();
+         alertDialog.create();
     }
 
     public void addBebida(View view){

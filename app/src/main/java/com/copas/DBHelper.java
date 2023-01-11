@@ -29,7 +29,7 @@ public class DBHelper extends SQLiteOpenHelper {
         onUpgrade(db, oldVersion, newVersion);
     }
 
-    public static void deleteDatabase(Context mContext) {
+/*    public static void deleteDatabase(Context mContext) {
         mContext.deleteDatabase(DATABASE_NAME);
-    }
+    }*/
 }

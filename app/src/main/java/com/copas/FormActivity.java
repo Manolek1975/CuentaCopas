@@ -107,6 +107,7 @@ public class FormActivity extends AppCompatActivity {
                 })
                 .show();
 
+
     }
 
     public void onRadioButtonClicked(View v) {
@@ -123,7 +124,7 @@ public class FormActivity extends AppCompatActivity {
                     image.setImageResource(R.drawable.vino);
                 break;
             case (R.id.radioButtonVermu):
-                    imageName =  "vermu";
+                    imageName =  "vermut";
                     image.setImageResource(R.drawable.vermut);
                 break;
             case (R.id.radioButtonLicor):
