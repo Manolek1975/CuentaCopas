@@ -4,6 +4,8 @@
     <string name="dialog_title">No existe Perfil</string>
     <string name="dialog_message">Debes crear primero un perfil, necesitamos tu peso y altura
         para calcular la tasa de alcoholemia lo mejor posible.</string>
+    <string name="dialog_title_eliminar">Eliminar bebida</string>
+    <string name="dialog_message_eliminar">¿Desea eliminar esta bebida? \n Ya no podrá recuperarla.</string>
 
     <string name="menu_perfil">Perfil</string>
     <string name="menu_bebidas">Bebidas</string>

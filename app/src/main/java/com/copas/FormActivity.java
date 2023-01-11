@@ -3,14 +3,13 @@ package com.copas;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FormActivity extends AppCompatActivity {
@@ -92,14 +91,28 @@ public class FormActivity extends AppCompatActivity {
     }
 
     public void deleteBebida(View view){
-        // TODO Dialog Borrado
-        bebida.deleteBebida(this, bebida.getId());
-        runBebidas();
+        int res = getResources().getIdentifier(bebida.getImage(), "drawable", this.getPackageName());
+
+        AlertDialog alertDialog = new AlertDialog.Builder(this, R.style.AlertDialogStyle)
+                .setIcon(res)
+                .setTitle(bebida.getName())
+                .setMessage(R.string.dialog_message_eliminar)
+                .setPositiveButton("SI", (dialogInterface, i) -> {
+                    bebida.deleteBebida(FormActivity.this, bebida.getId());
+                    runBebidas();
+                })
+                .setNegativeButton("NO", (dialogInterface, i) -> {
+                    //set what should happen when negative button is clicked
+                    //Toast.makeText(getApplicationContext(),"Acción cancelada",Toast.LENGTH_LONG).show();
+                })
+                .show();
+        //bebida.deleteBebida(this, bebida.getId());
+
     }
 
     public void onRadioButtonClicked(View v) {
         // Is the button now checked?
-        boolean checked = ((RadioButton) v).isChecked();
+
         // Check which radio button was clicked
         switch(v.getId()) {
             case (R.id.radioButtonCerveza):
