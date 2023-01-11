@@ -21,7 +21,11 @@ public class Historico {
 
     public static final int ONE_DAY = 86400000; //24h  *  60m  *  60s  *  1000ms   =  86400000
     private Date date;
+    private String fecha;
+    private int hour;
+    private int term;
     private int drink;
+
 
     public Historico(){
         super();
@@ -34,6 +38,14 @@ public class Historico {
 
     public Historico(int drink) {
         this.drink = drink;
+    }
+
+    public Historico(int id, String fecha, int hour, int term, int drink) {
+        this.fecha = fecha;
+        this.hour = hour;
+        this.term = term;
+        this.drink = drink;
+
     }
 
     public void setHistorico(Context context, int id){
@@ -85,9 +97,7 @@ public class Historico {
 
         DBHelper helper = new DBHelper(context);
         SQLiteDatabase db = helper.getWritableDatabase();
-        //Cursor c = db.rawQuery("SELECT * FROM historico WHERE date >=?", new String[] { date.toString() });
         Cursor c = db.rawQuery("SELECT * FROM historico WHERE date BETWEEN '" + dateDrink + "' AND '" + now + "'", null);
-        //Cursor c = db.rawQuery("SELECT * FROM historico WHERE date >= '"+dateL+"' AND date <= '"+dateNew+"'", null);
         if (c != null){
             Log.i("query", "SELECT * FROM historico WHERE date >= '"+dateDrink+"' AND date <= '"+now+"'");
         }
@@ -115,10 +125,47 @@ public class Historico {
                 bebidas.add(bebida);
             }
             Log.i("historico", val.drink + "");
+            c2.close();
+        }
+
+        db.close();
+        return bebidas;
+    }
+
+    public List<Historico> getAll(Context context) {
+        DBHelper helper = new DBHelper(context);
+        SQLiteDatabase db = helper.getWritableDatabase();
+        List<Historico> historico = new ArrayList<>();
+        Cursor c = db.rawQuery("SELECT * FROM historico", null);
+        while (c.moveToNext()) {
+            Historico h = new Historico(
+                    c.getInt(0),
+                    c.getString(1),
+                    c.getInt(2),
+                    c.getInt(3),
+                    c.getInt(4)
+
+            );
+            historico.add(h);
         }
         c.close();
         db.close();
-        return bebidas;
+        return historico;
+    }
 
+    public String getFecha() {
+        return fecha;
+    }
+
+    public int getHour() {
+        return hour;
+    }
+
+    public int getTerm() {
+        return term;
+    }
+
+    public int getDrink() {
+        return drink;
     }
 }

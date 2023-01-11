@@ -92,6 +92,7 @@ public class FormActivity extends AppCompatActivity {
     }
 
     public void deleteBebida(View view){
+        // TODO Dialog Borrado
         bebida.deleteBebida(this, bebida.getId());
         runBebidas();
     }

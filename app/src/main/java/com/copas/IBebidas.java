@@ -16,7 +16,7 @@ public interface IBebidas {
 
     List<Bebidas> readBebidas(Context context);
 
-    Bebidas getBebida(Context context);
+    Bebidas getBebida(Context context, int id);
 
 
 }

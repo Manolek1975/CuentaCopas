@@ -82,14 +82,30 @@ public class Bebidas implements IBebidas, Serializable {
     }
 
     @Override
-    public Bebidas getBebida(Context context) {
-        return null;
+    public Bebidas getBebida(Context context, int id)
+    {
+        DBHelper helper = new DBHelper(context);
+        SQLiteDatabase db = helper.getWritableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM bebidas WHERE id=?", new String[] {String.valueOf(id)});
+        c.moveToFirst();
+        Bebidas bebida = new Bebidas(
+                c.getInt(0),
+                c.getString(1),
+                c.getInt(2),
+                c.getInt(3),
+                c.getDouble(4),
+                c.getString(5)
+        );
+        c.close();
+        db.close();
+        return bebida;
     }
 
     @Override
     public void createBebida(Context context, Bebidas bebida) {
         DBHelper helper = new DBHelper(context);
         SQLiteDatabase db = helper.getWritableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM bebidas", null);
 
         ContentValues values = new ContentValues();
         values.put(DBBebidas.COLUMN_NAME, bebida.getName());
@@ -98,6 +114,7 @@ public class Bebidas implements IBebidas, Serializable {
         values.put(DBBebidas.COLUMN_PRECIO, bebida.getPrecio());
         values.put(DBBebidas.COLUMN_IMAGE, bebida.getImage());
         db.insert(DBBebidas.TABLE_NAME, null, values);
+        c.close();
         db.close();
     }
 
