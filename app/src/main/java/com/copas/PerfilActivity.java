@@ -27,6 +27,7 @@ public class PerfilActivity extends AppCompatActivity {
         edad = findViewById(R.id.editEdad);
         peso = findViewById(R.id.editPeso);
         altura = findViewById(R.id.editAltura);
+        sex = "M";
     }
 
     public void setMale(View view){
@@ -73,9 +74,9 @@ public class PerfilActivity extends AppCompatActivity {
         super.onResume();
         SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
         name.setText(data.getString("name", ""));
-        edad.setText(data.getString("edad", "") + " años");
-        peso.setText(data.getString("peso", "") + " kg");
-        altura.setText(data.getString("altura", "") + " cm");
+        edad.setText(String.format("%s años", data.getString("edad", "")));
+        peso.setText(String.format("%s kg", data.getString("peso", "")));
+        altura.setText(String.format("%s cm", data.getString("altura", "")));
         sex = data.getString("sex", "");
 
         if (sex.equals("M")) {

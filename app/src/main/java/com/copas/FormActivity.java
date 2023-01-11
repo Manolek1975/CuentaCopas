@@ -106,7 +106,6 @@ public class FormActivity extends AppCompatActivity {
                     //Toast.makeText(getApplicationContext(),"Acción cancelada",Toast.LENGTH_LONG).show();
                 })
                 .show();
-        //bebida.deleteBebida(this, bebida.getId());
 
     }
 

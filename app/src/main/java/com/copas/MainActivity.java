@@ -28,8 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Historico historico;
     private SeekBar seekbar;
-    private int lapso;
-    private int altura;
+    private int lapso = 6;
     private double tasaTotal, precioTotal;
 
 
@@ -39,25 +38,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         seekbar = findViewById(R.id.seekBar);
+        seekbar.setMin(6);
         TextView lapsoText = findViewById(R.id.lapsoTiempo);
-        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-           @Override
-           public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-               lapsoText.setText("Lapso: " + valueOf(progress) + "h");
-           }
-           @Override
-           public void onStartTrackingTouch(SeekBar seekBar) {
-           }
-           @Override
-           public void onStopTrackingTouch(SeekBar seekBar) {
-           }
-       });
 
         SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
         lapso = data.getInt("lapso", 0);
         tasaTotal = 0.00;
         precioTotal = 0.00;
         historico = new Historico();
+
+        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                lapsoText.setText(String.format("Lapso: %sh", progress));
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
         showBebidas();
 
     }
@@ -68,17 +70,17 @@ public class MainActivity extends AppCompatActivity {
         //volumen = volumen * 10; // En mililitros
         SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
         int peso = Integer.parseInt(data.getString("peso", ""));
-        altura = Integer.parseInt(data.getString("altura", ""));
+        int altura = Integer.parseInt(data.getString("altura", ""));
         TextView tasaText = findViewById(R.id.tasaTotal);
         TextView precioText = findViewById(R.id.precioTotal);
-        Double alcoholPuroIngerido = (bebida.getTasa() * bebida.getVol() * 0.8) / 10;
-        Double h= Double.valueOf(altura) / 100;
+        double alcoholPuroIngerido = (bebida.getTasa() * bebida.getVol() * 0.8) / 10;
+        double h= (double) altura / 100;
         Double masa = peso / Math.pow(h, 2);
-        Double tasa = alcoholPuroIngerido / (peso * 0.7);
+        double tasa = alcoholPuroIngerido / (peso * 0.7);
         tasaTotal = tasaTotal + tasa;
         precioTotal = precioTotal + bebida.getPrecio() / 100;
-        tasaText.setText(String.format("%.2f", tasaTotal) + "%");
-        precioText.setText(String.format("%.2f", precioTotal) + "€");
+        tasaText.setText(String.format("%s%%", String.format("%.2f", tasaTotal)));
+        precioText.setText(String.format("%s€", String.format("%.2f", precioTotal)));
         setTasaColor(tasaTotal);
         //Log.i("LIST calculoTasa: ", "tasa:" + tasa + " masa:" + masa + " alcoholpuroingerido:" + alcoholPuroIngerido);
 
@@ -148,13 +150,10 @@ public class MainActivity extends AppCompatActivity {
                 .setIcon(android.R.drawable.ic_menu_my_calendar)
                 .setTitle(R.string.dialog_title)
                 .setMessage(R.string.dialog_message)
-                .setPositiveButton("CREAR PERFIL", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent intent = new Intent(MainActivity.this, PerfilActivity.class);
-                        startActivity(intent);
+                .setPositiveButton("CREAR PERFIL", (dialogInterface, i) -> {
+                    Intent intent = new Intent(MainActivity.this, PerfilActivity.class);
+                    startActivity(intent);
 
-                    }
                 })
                 .show();
     }

@@ -2,8 +2,10 @@ package com.copas;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.view.MenuItem;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TopMenu extends AppCompatActivity {
@@ -28,7 +30,16 @@ public class TopMenu extends AppCompatActivity {
             runHistorico();
             return true;
         }
+        if (id == R.id.menu_info){
+            runInfo();
+            return true;
+        }
         return super.onOptionsItemSelected(option);
+    }
+
+    private void runInfo() {
+        Intent i =  new Intent(context, Info.class);
+        context.startActivity(i);
     }
 
     private void runHistorico() {
