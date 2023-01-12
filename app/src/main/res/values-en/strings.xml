@@ -14,6 +14,7 @@
     <string name="menu_modificarbebida">Modify drink</string>
     <string name="menu_historico">Resume</string>
     <string name="menu_info">Info</string>
+    <string name="crear_perfil_btn">Create profile</string>
 
     <string name="guardar_btn">Save</string>
     <string name="borrar_btn">Delete</string>

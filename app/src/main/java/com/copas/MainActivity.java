@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
                 .setIcon(android.R.drawable.ic_menu_my_calendar)
                 .setTitle(R.string.dialog_title)
                 .setMessage(R.string.dialog_message)
-                .setPositiveButton("CREAR PERFIL", (dialogInterface, i) -> {
+                .setPositiveButton(R.string.crear_perfil_btn, (dialogInterface, i) -> {
                     Intent intent = new Intent(MainActivity.this, PerfilActivity.class);
                     startActivity(intent);
                 })

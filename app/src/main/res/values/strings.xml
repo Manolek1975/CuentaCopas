@@ -8,6 +8,7 @@
     <string name="dialog_message_eliminar">¿Desea eliminar esta bebida? \n Ya no podrá recuperarla.</string>
 
     <string name="menu_perfil">Perfil</string>
+    <string name="crear_perfil_btn">Crear perfil</string>
     <string name="menu_bebidas">Bebidas</string>
     <string name="menu_addbebida">Consumición</string>
     <string name="menu_crearbebida">Crear Bebida</string>
