@@ -161,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("CREAR PERFIL", (dialogInterface, i) -> {
                     Intent intent = new Intent(MainActivity.this, PerfilActivity.class);
                     startActivity(intent);
-
                 })
                 .show();
          alertDialog.create();

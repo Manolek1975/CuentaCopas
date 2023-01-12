@@ -2,25 +2,30 @@ package com.copas;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FormActivity extends AppCompatActivity {
 
-    private String imageName = "cerveza";
     private Bebidas bebida;
     private EditText name;
     private EditText tasa;
     private EditText volumen;
     private EditText precio;
     private ImageView image;
+    private TextView imageName;
 
 
     @SuppressLint("SetTextI18n")
@@ -36,6 +41,7 @@ public class FormActivity extends AppCompatActivity {
         volumen = findViewById(R.id.volumen);
         precio = findViewById(R.id.precio);
         image = findViewById(R.id.imageViewBebida);
+        imageName = findViewById(R.id.imageName);
 
         Intent i = getIntent();
         //Bundle crud = i.getExtras();
@@ -44,7 +50,6 @@ public class FormActivity extends AppCompatActivity {
         if (bebida == null){
             this.setTitle("Crear Bebida");
             btnSave.setText("Crear");
-            image.setImageResource(R.drawable.cerveza);
             papelera.setVisibility(View.INVISIBLE);
         } else {
             this.setTitle("Modificar Bebida");
@@ -54,8 +59,8 @@ public class FormActivity extends AppCompatActivity {
             volumen.setText(Float.toString(bebida.getVol()));
             precio.setText(Double.toString(bebida.getPrecio() / 100));
             image.setImageResource(this.getResources().getIdentifier(bebida.getImage(), "drawable", getPackageName()));
+            imageName.setText(bebida.getImage());
         }
-
 
         btnSave.setOnClickListener(v -> {
             if (bebida == null){
@@ -68,16 +73,19 @@ public class FormActivity extends AppCompatActivity {
     }
 
     public void crearBebida(){
+        if (TextUtils.isEmpty(imageName.getText())){
+            Toast.makeText(getApplicationContext(),"Debe seleccionar una bebida",Toast.LENGTH_LONG).show();
+            return;
+        }
         Bebidas bebida = new Bebidas();
         bebida.setName(String.valueOf(name.getText()));
         bebida.setTasa(Float.parseFloat(tasa.getText().toString()));
         bebida.setVol(Float.parseFloat(volumen.getText().toString()));
         bebida.setPrecio(Double.parseDouble(precio.getText().toString())*100);
-        bebida.setImage(imageName);
+        bebida.setImage(String.valueOf(imageName.getText()));
 
         bebida.createBebida(this, bebida);
         runBebidas();
-
     }
 
     private void updateBebida() {
@@ -85,7 +93,8 @@ public class FormActivity extends AppCompatActivity {
         bebida.setTasa(Float.parseFloat(tasa.getText().toString()));
         bebida.setVol(Float.parseFloat(volumen.getText().toString()));
         bebida.setPrecio(Double.parseDouble(precio.getText().toString())*100);
-        bebida.setImage(imageName);
+        bebida.setImage(String.valueOf(imageName.getText()));
+
         bebida.updateBebida(this, bebida);
         runBebidas();
     }
@@ -102,12 +111,9 @@ public class FormActivity extends AppCompatActivity {
                     runBebidas();
                 })
                 .setNegativeButton("NO", (dialogInterface, i) -> {
-                    //set what should happen when negative button is clicked
                     //Toast.makeText(getApplicationContext(),"Acción cancelada",Toast.LENGTH_LONG).show();
                 })
                 .show();
-
-
     }
 
     public void onRadioButtonClicked(View v) {
@@ -116,28 +122,28 @@ public class FormActivity extends AppCompatActivity {
         // Check which radio button was clicked
         switch(v.getId()) {
             case (R.id.radioButtonCerveza):
-                    imageName = "cerveza";
-                    image.setImageResource(R.drawable.cerveza);
+                imageName.setText(R.string.cerveza);
+                image.setImageResource(R.drawable.cerveza);
                 break;
             case (R.id.radioButtonVino):
-                    imageName =  "vino";
-                    image.setImageResource(R.drawable.vino);
+                imageName.setText(R.string.vino);
+                image.setImageResource(R.drawable.vino);
                 break;
             case (R.id.radioButtonVermu):
-                    imageName =  "vermut";
-                    image.setImageResource(R.drawable.vermut);
+                imageName.setText(R.string.vermut);
+                image.setImageResource(R.drawable.vermut);
                 break;
             case (R.id.radioButtonLicor):
-                    imageName =  "licor";
-                    image.setImageResource(R.drawable.licor);
+                imageName.setText(R.string.licor);
+                image.setImageResource(R.drawable.licor);
                 break;
             case (R.id.radioButtonBrandy):
-                    imageName =  "brandy";
-                    image.setImageResource(R.drawable.brandy);
+                imageName.setText(R.string.brandy);
+                image.setImageResource(R.drawable.brandy);
                 break;
             case (R.id.radioButtonCombinado):
-                    imageName =  "combinado";
-                    image.setImageResource(R.drawable.combinado);
+                imageName.setText(R.string.combinado);
+                image.setImageResource(R.drawable.combinado);
                 break;
         }
     }
@@ -149,6 +155,11 @@ public class FormActivity extends AppCompatActivity {
 
     public void runCancelar(View v){
         Intent intent = new Intent(FormActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void runForm(View view){
+        Intent intent = new Intent(FormActivity.this, FormActivity.class);
         startActivity(intent);
     }
 

@@ -40,6 +40,14 @@
     <string name="cancelar">Cancelar</string>
     <string name="todo">TODO</string>
 
+    <string name="cerveza">cerveza</string>
+    <string name="vino">vino</string>
+    <string name="vermut">vermut</string>
+    <string name="licor">licor</string>
+    <string name="brandy">brandy</string>
+    <string name="combinado">combinado</string>
+
+
     <string-array name="name_array">
         <item>Cerveza</item>
         <item>Vino</item>
