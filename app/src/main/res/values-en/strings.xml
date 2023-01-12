@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">Count cups</string>
+    <string name="addButton">+</string>
+    <string name="dialog_title">No Profile</string>
+    <string name="dialog_message">You must create a profile first, we need your weight and height
+        to calculate the BAC as well as possible.</string>
+    <string name="dialog_title_eliminar">Delete drink</string>
+    <string name="dialog_message_eliminar">Do you want to delete this drink? \n You will no longer be able to get it back.</string>
+
+    <string name="menu_perfil">Profile</string>
+    <string name="menu_bebidas">Drinks</string>
+    <string name="menu_addbebida">Cup</string>
+    <string name="menu_crearbebida">Edit drink</string>
+    <string name="menu_historico">Resume</string>
+    <string name="menu_info">Info</string>
+
+    <string name="guardar_btn">Save</string>
+    <string name="borrar_btn">Delete</string>
+
+    <string name="tasa_main">BAC</string>
+
+    <string name="name_hint">Name</string>
+    <string name="edad_hint">Age</string>
+    <string name="peso_hint">weight (kg)</string>
+    <string name="altura_hint">Height (cm)</string>
+
+    <string name="name_bebida_hint">Drink name</string>
+    <string name="tasa_bebida_hint">Rate %</string>
+    <string name="vol_bebida_hint">Volume cl</string>
+    <string name="precio_bebida_hint">Price €</string>
+
+    <string name="crear_bebida">Create Drink</string>
+    <string name="tasa">0</string>
+    <string name="gl">g/l</string>
+    <string name="precio">0€</string>
+    <string name="tiempo">Lapse: 6h</string>
+    <string name="test">Test</string>
+    <string name="seleccione_una_imagen">Select an image</string>
+    <string name="guardar">Save</string>
+    <string name="cancelar">Cancel</string>
+    <string name="todo">TODO</string>
+
+    <string name="cerveza">cerveza</string>
+    <string name="vino">vino</string>
+    <string name="vermut">vermut</string>
+    <string name="licor">licor</string>
+    <string name="brandy">brandy</string>
+    <string name="combinado">combinado</string>
+
+
+    <string-array name="name_array">
+        <item>Beer</item>
+        <item>Wine</item>
+        <item>Vermouth</item>
+        <item>Liqueur</item>
+        <item>Brandy</item>
+        <item>Combined</item>
+    </string-array>
+
+    <string-array name="tasa_array">
+        <item>5</item>
+        <item>12</item>
+        <item>15</item>
+        <item>30</item>
+        <item>38</item>
+        <item>43</item>
+    </string-array>
+
+    <string-array name="volumen_array">
+        <item>33</item>
+        <item>10</item>
+        <item>15</item>
+        <item>10</item>
+        <item>10</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="precio_array">
+        <item>250</item>
+        <item>240</item>
+        <item>280</item>
+        <item>250</item>
+        <item>300</item>
+        <item>700</item>
+    </string-array>
+
+    <string-array name="image_array">
+        <item>cerveza</item>
+        <item>vino</item>
+        <item>vermut</item>
+        <item>licor</item>
+        <item>brandy</item>
+        <item>combinado</item>
+    </string-array>
+
+
+</resources>
