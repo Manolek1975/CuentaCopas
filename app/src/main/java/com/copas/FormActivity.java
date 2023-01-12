@@ -48,12 +48,12 @@ public class FormActivity extends AppCompatActivity {
         bebida = (Bebidas) i.getSerializableExtra("bebida");
 
         if (bebida == null){
-            this.setTitle("Crear Bebida");
-            btnSave.setText("Crear");
+            this.setTitle(R.string.menu_crearbebida);
+            btnSave.setText(R.string.crear);
             papelera.setVisibility(View.INVISIBLE);
         } else {
-            this.setTitle("Modificar Bebida");
-            btnSave.setText("Modificar");
+            this.setTitle(R.string.menu_modificarbebida);
+            btnSave.setText(R.string.modificar);
             name.setText(bebida.getName());
             tasa.setText(Float.toString(bebida.getTasa()));
             volumen.setText(Float.toString(bebida.getVol()));

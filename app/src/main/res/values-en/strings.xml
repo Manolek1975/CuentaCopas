@@ -5,12 +5,13 @@
     <string name="dialog_message">You must create a profile first, we need your weight and height
         to calculate the BAC as well as possible.</string>
     <string name="dialog_title_eliminar">Delete drink</string>
-    <string name="dialog_message_eliminar">Do you want to delete this drink? \n You will no longer be able to get it back.</string>
+    <string name="dialog_message_eliminar">Do you want to delete this drink? \nYou will no longer be able to get it back.</string>
 
     <string name="menu_perfil">Profile</string>
     <string name="menu_bebidas">Drinks</string>
     <string name="menu_addbebida">Cup</string>
-    <string name="menu_crearbebida">Edit drink</string>
+    <string name="menu_crearbebida">Create drink</string>
+    <string name="menu_modificarbebida">Modify drink</string>
     <string name="menu_historico">Resume</string>
     <string name="menu_info">Info</string>
 
@@ -38,7 +39,18 @@
     <string name="seleccione_una_imagen">Select an image</string>
     <string name="guardar">Save</string>
     <string name="cancelar">Cancel</string>
+    <string name="crear">Save</string>
+    <string name="modificar">Modify</string>
+    <string name="toast_image">You must select a drink</string>
+    <string name="si">YES</string>
+    <string name="no">NO</string>
+
     <string name="todo">TODO</string>
+
+    <string name="info">Approximate calculation of the alcohol rate. Expense control\n\n +
+                        Suggestions mailbox: cuentacopas2023@gmail.com\n\n +
+                        Versión 1.0\n +
+                        Manuel Domínguez 2023\n</string>
 
     <string name="cerveza">cerveza</string>
     <string name="vino">vino</string>

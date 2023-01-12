@@ -12,11 +12,8 @@ public class Info extends AppCompatActivity {
 
         AlertDialog alertDialog = new AlertDialog.Builder(this, R.style.AlertDialogStyle)
                 .setIcon(R.drawable.icon)
-                .setTitle("Cuenta Copas")
-                .setMessage("Cálculo aproximado de la tasa de alcoholemia. Control de gasto\n\n" +
-                        "Buzón de sugerencias: cuentacopas2023@gmail.com\n\n" +
-                        "Versión 1.0\n" +
-                        "Manuel Domínguez 2023\n")
+                .setTitle(R.string.app_name)
+                .setMessage(R.string.info)
                 .setPositiveButton("OK", (dialogInterface, i) -> {
                     Intent intent = new Intent(Info.this, MainActivity.class);
                     startActivity(intent);

@@ -74,7 +74,7 @@ public class PerfilActivity extends AppCompatActivity {
         super.onResume();
         SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
         name.setText(data.getString("name", ""));
-        edad.setText(String.format("%s años", data.getString("edad", "")));
+        edad.setText(data.getString("edad", ""));
         peso.setText(String.format("%s kg", data.getString("peso", "")));
         altura.setText(String.format("%s cm", data.getString("altura", "")));
         sex = data.getString("sex", "");

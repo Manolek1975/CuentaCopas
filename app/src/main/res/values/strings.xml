@@ -10,7 +10,8 @@
     <string name="menu_perfil">Perfil</string>
     <string name="menu_bebidas">Bebidas</string>
     <string name="menu_addbebida">Consumición</string>
-    <string name="menu_crearbebida">Editar Bebida</string>
+    <string name="menu_crearbebida">Crear Bebida</string>
+    <string name="menu_modificarbebida">Modificar Bebida</string>
     <string name="menu_historico">Resumen</string>
     <string name="menu_info">Info</string>
 
@@ -38,7 +39,18 @@
     <string name="seleccione_una_imagen">Seleccione una imagen</string>
     <string name="guardar">Guardar</string>
     <string name="cancelar">Cancelar</string>
+    <string name="crear">Guardar</string>
+    <string name="modificar">Modificar</string>
+    <string name="toast_image">Debe seleccionar una bebida</string>
+    <string name="si">SI</string>
+    <string name="no">NO</string>
+
     <string name="todo">TODO</string>
+
+    <string name="info">Cálculo aproximado de la tasa de alcoholemia. Control de gasto\n\n +
+                        Buzón de sugerencias: cuentacopas2023@gmail.com\n\n +
+                        Versión 1.0\n +
+                        Manuel Domínguez 2023\n</string>
 
     <string name="cerveza">cerveza</string>
     <string name="vino">vino</string>
