@@ -27,6 +27,10 @@ public class TopMenu extends AppCompatActivity {
             runHistorico();
             return true;
         }
+        if (id == R.id.menu_help){
+            runHelp();
+            return true;
+        }
         if (id == R.id.menu_info){
             runInfo();
             return true;
@@ -46,6 +50,11 @@ public class TopMenu extends AppCompatActivity {
 
     private void runBebidas() {
         Intent i =  new Intent(context, BebidasActivity.class);
+        context.startActivity(i);
+    }
+
+    private void runHelp() {
+        Intent i =  new Intent(context, Help.class);
         context.startActivity(i);
     }
 

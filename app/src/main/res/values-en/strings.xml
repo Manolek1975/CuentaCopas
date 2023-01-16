@@ -14,6 +14,7 @@
     <string name="menu_modificarbebida">Modify drink</string>
     <string name="menu_historico">Resume</string>
     <string name="menu_info">Info</string>
+    <string name="menu_help">Help</string>
     <string name="crear_perfil_btn">Create profile</string>
 
     <string name="guardar_btn">Save</string>
@@ -33,7 +34,7 @@
 
     <string name="crear_bebida">Create Drink</string>
     <string name="tasa">0</string>
-    <string name="gl">g/l</string>
+    <string name="gl">%</string>
     <string name="precio">0€</string>
     <string name="tiempo">Lapse: 6h</string>
     <string name="test">Test</string>
@@ -52,6 +53,23 @@
                         Suggestions mailbox: cuentacopas2023@gmail.com\n\n +
                         Versión 1.0\n +
                         Manuel Domínguez 2023\n</string>
+
+    <string name="help">
+Once a drink has been consumed, press the button +\n
+    </string>
+
+    <string name="help2">
+Choose a drink from the list and the blood alcohol concentration will be displayed in the center text\n\n
+The period of time to reduce the alcohol level is 6 hours in optimal conditions, eating, drinking slowly and without smoking, consider increasing the period in other conditions.\n\n
+You can create and modify your own drinks by using the pencil button in the menu.\n\n
+    </string>
+
+    <string name="help3">
+Click on Create Drink to create a new drink, you will need to provide its degree of alcohol, volume in centiliters and its price in euros.\n\n
+You can see a history of all drinks consumed since you installed the application in the summary icon.\n\n
+Do not forget to modify your profile if you have gained or lost weight, the calculation of the rate is made based on your age, weight and height.
+    </string>
+
 
     <string name="cerveza">cerveza</string>
     <string name="vino">vino</string>

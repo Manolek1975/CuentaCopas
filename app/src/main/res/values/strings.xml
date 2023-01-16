@@ -15,6 +15,7 @@
     <string name="menu_modificarbebida">Modificar Bebida</string>
     <string name="menu_historico">Resumen</string>
     <string name="menu_info">Info</string>
+    <string name="menu_help">Ayuda</string>
 
     <string name="guardar_btn">Guardar</string>
     <string name="borrar_btn">Eliminar</string>
@@ -33,7 +34,7 @@
 
     <string name="crear_bebida">Crear Bebida</string>
     <string name="tasa">0</string>
-    <string name="gl">g/l</string>
+    <string name="gl">%</string>
     <string name="precio">0€</string>
     <string name="tiempo">Lapso: 6h</string>
     <string name="test">Test</string>
@@ -53,13 +54,26 @@
                         Versión 1.0\n +
                         Manuel Domínguez 2023\n</string>
 
+    <string name="help">Una vez consumida una bebida pulse el botón +</string>
+
+    <string name="help2">
+Elija una bebida de la lista y se mostrará la concentración de alcohol en sangre en el texto central\n\n
+El lapso de tiempo para reducir la tasa de alcohol es de 6 horas en condiciones óptimas, comiendo, bebiendo pausadamente y sin fumar, considere aumentar el lapso en otras condiciones.\n\n
+Puede crear y modificar sus propias bebidas, para ello use el botón del lapiz en el menú.\n
+    </string>
+
+    <string name="help3">
+Haga click en Crear Bebida para crear una nueva bebida, necesitará proporcionar su grado en alcohol, volumen en centilitros y su precio en euros.\n\n
+Puede ver un histórico de todas las bebidas consumidas desde que instaló la aplicación en el icono resumen.\n\n
+No olvide modificar su perfil si ha ganado o perdido peso, el cálculo de la tasa de realiza en base a su edad, peso y altura.
+    </string>
+
     <string name="cerveza">cerveza</string>
     <string name="vino">vino</string>
     <string name="vermut">vermut</string>
     <string name="licor">licor</string>
     <string name="brandy">brandy</string>
     <string name="combinado">combinado</string>
-
 
     <string-array name="name_array">
         <item>Cerveza</item>
