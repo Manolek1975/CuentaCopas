@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#00FFFFFF"
-            android:contentDescription="@string/app_name"
+            android:contentDescription="@string/male"
             android:onClick="setMale"
             app:srcCompat="@drawable/hombre"
             tools:ignore="DuplicateSpeakableTextCheck" />
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#00FFFFFF"
-            android:contentDescription="@string/app_name"
+            android:contentDescription="@string/female"
             android:onClick="setFemale"
             app:srcCompat="@drawable/mujer" />
     </LinearLayout>
@@ -122,14 +122,15 @@
     <LinearLayout
         android:id="@+id/layoutBotones"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="60dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnPerfilGuardar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
             android:background="@drawable/roundedbutton"
             android:onClick="runGuardar"
             android:text="@string/guardar_btn"
@@ -138,12 +139,13 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="2" />
 
         <Button
             android:id="@+id/btnPerfilCancelar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
             android:background="@drawable/roundedbutton"
             android:onClick="runBorrar"
             android:text="@string/borrar_btn"

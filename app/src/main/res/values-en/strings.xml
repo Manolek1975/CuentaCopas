@@ -27,6 +27,8 @@
     <string name="edad_hint">Age</string>
     <string name="peso_hint">weight (kg)</string>
     <string name="altura_hint">Height (cm)</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
 
     <string name="name_bebida_hint">Drink name</string>
     <string name="tasa_bebida_hint">Rate %</string>
