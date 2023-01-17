@@ -27,20 +27,11 @@ public class TopMenu extends AppCompatActivity {
             runHistorico();
             return true;
         }
-        if (id == R.id.menu_help){
+        if (id == R.id.menu_help || id == R.id.icon_menu_help){
             runHelp();
             return true;
         }
-        if (id == R.id.menu_info){
-            runInfo();
-            return true;
-        }
         return super.onOptionsItemSelected(option);
-    }
-
-    private void runInfo() {
-        Intent i =  new Intent(context, Info.class);
-        context.startActivity(i);
     }
 
     private void runHistorico() {

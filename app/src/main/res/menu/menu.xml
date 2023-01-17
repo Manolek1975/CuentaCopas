@@ -16,10 +16,6 @@
     <item android:id="@+id/menu_help"
         android:title="@string/menu_help" />
 
-    <item android:id="@+id/menu_info"
-        android:title="@string/menu_info" />
-
-
     <item
         android:id="@+id/icon_menu_perfil"
         android:title="@string/menu_perfil"
@@ -39,6 +35,13 @@
         android:title="@string/menu_historico"
         app:showAsAction="always"
         android:icon="@android:drawable/ic_menu_agenda"
+        tools:ignore="AlwaysShowAction" />
+
+    <item
+        android:id="@+id/icon_menu_help"
+        android:title="@string/menu_help"
+        app:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_help"
         tools:ignore="AlwaysShowAction" />
 
 </menu>
