@@ -72,8 +72,9 @@
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/help3"
                 app:srcCompat="@android:drawable/ic_menu_agenda"
-                android:contentDescription="@string/help3" />
+                tools:ignore="RedundantDescriptionCheck" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -104,7 +105,8 @@
                 android:text="@string/version"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="16sp"
+
                 tools:ignore="TextContrastCheck" />
 
         </LinearLayout>

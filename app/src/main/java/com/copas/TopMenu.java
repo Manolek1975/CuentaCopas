@@ -27,7 +27,7 @@ public class TopMenu extends AppCompatActivity {
             runHistorico();
             return true;
         }
-        if (id == R.id.menu_help || id == R.id.icon_menu_help){
+        if (id == R.id.menu_help){
             runHelp();
             return true;
         }
