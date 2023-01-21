@@ -35,6 +35,13 @@
             android:orientation="vertical"
             android:padding="20dp">
 
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/name_bebida_hint"
+                android:textColor="@color/white" />
+
             <EditText
                 android:id="@+id/nombre"
                 android:layout_width="match_parent"
@@ -49,9 +56,13 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
 
-            <Space
+            <TextView
+                android:id="@+id/textView6"
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="wrap_content"
+                android:text="@string/tasa_bebida_hint"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white" />
 
             <EditText
                 android:id="@+id/tasa"
@@ -67,9 +78,13 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
 
-            <Space
+            <TextView
+                android:id="@+id/textView7"
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="wrap_content"
+                android:text="@string/vol_bebida_hint"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white" />
 
             <EditText
                 android:id="@+id/volumen"
@@ -85,9 +100,13 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
 
-            <Space
+            <TextView
+                android:id="@+id/textView8"
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="wrap_content"
+                android:text="@string/precio_bebida_hint"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white" />
 
             <EditText
                 android:id="@+id/precio"

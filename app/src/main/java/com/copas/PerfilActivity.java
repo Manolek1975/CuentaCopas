@@ -27,7 +27,7 @@ public class PerfilActivity extends AppCompatActivity {
         edad = findViewById(R.id.editEdad);
         peso = findViewById(R.id.editPeso);
         altura = findViewById(R.id.editAltura);
-        sex = "M";
+        //sex = "M";
     }
 
     public void setMale(View view){
@@ -46,26 +46,15 @@ public class PerfilActivity extends AppCompatActivity {
         sex = "F";
     }
 
-
     public void onPause(){
         super.onPause();
         SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor dataEdit = data.edit();
 
-        String edadString = edad.getText().toString();
-        String[] edadSplit = edadString.split(" ");
-        String getEdad = edadSplit[0];
-        String pesoString = peso.getText().toString();
-        String[] pesoSplit = pesoString.split(" ");
-        String getPeso = pesoSplit[0];
-        String alturaString = altura.getText().toString();
-        String[] alturaSplit = alturaString.split(" ");
-        String getAltura = alturaSplit[0];
-
         dataEdit.putString("name", name.getText().toString());
-        dataEdit.putString("edad", getEdad);
-        dataEdit.putString("peso", getPeso);
-        dataEdit.putString("altura", getAltura);
+        dataEdit.putString("edad", edad.getText().toString());
+        dataEdit.putString("peso", peso.getText().toString());
+        dataEdit.putString("altura", altura.getText().toString());
         dataEdit.putString("sex", sex);
         dataEdit.apply();
     }
@@ -75,8 +64,8 @@ public class PerfilActivity extends AppCompatActivity {
         SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
         name.setText(data.getString("name", ""));
         edad.setText(data.getString("edad", ""));
-        peso.setText(String.format("%s kg", data.getString("peso", "")));
-        altura.setText(String.format("%s cm", data.getString("altura", "")));
+        peso.setText(data.getString("peso", ""));
+        altura.setText(data.getString("altura", ""));
         sex = data.getString("sex", "");
 
         if (sex.equals("M")) {

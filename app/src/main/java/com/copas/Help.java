@@ -20,7 +20,10 @@ public class Help extends AppCompatActivity {
                 .setIcon(R.drawable.icon)
                 .setTitle(R.string.app_name)
                 .setMessage(R.string.info)
-                .setPositiveButton("OK", (dialogInterface, i) -> {
+                .setPositiveButton("VOLVER", (dialogInterface, i) -> {
+
+                })
+                .setNegativeButton("CERRAR", (dialogInterface, i) -> {
                     Intent intent = new Intent(Help.this, MainActivity.class);
                     startActivity(intent);
 

@@ -55,9 +55,11 @@
     <string name="info">
 Approximate calculation of the alcohol rate. Expense control.\n\n
 Suggestions mailbox: cuentacopas2023@gmail.com\n\n
-Versión 1.0\n
+Versión 1.0.3\n
 PHPTRONIC\n
 Manuel Domínguez 2023\n</string>
+
+    <string name="ayuda_tittle">Count Coups</string>
 
     <string name="help">
 Once a drink has been consumed, press the button +\n
@@ -71,10 +73,17 @@ You can create and modify your own drinks by using the pencil button in the menu
 
     <string name="help3">
 Click on Create Drink to create a new drink, you will need to provide its degree of alcohol, volume in centiliters and its price in euros.\n\n
-You can see a history of all drinks consumed since you installed the application in the summary icon.\n\n
     </string>
 
     <string name="help4">
+To delete a drink simply tap the trash in the top right corner.
+    </string>
+
+    <string name="help5">
+You can see a history of all drinks consumed since you installed the application in the summary icon.\n\n
+    </string>
+
+    <string name="help6">
 Do not forget to modify your profile if you have gained or lost weight, the calculation of the rate is made based on your age, weight and height.
     </string>
 

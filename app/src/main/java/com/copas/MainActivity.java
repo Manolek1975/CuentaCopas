@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //TODO Translate to English
         showBebidas();
 
     }
@@ -66,20 +65,26 @@ public class MainActivity extends AppCompatActivity {
         //graduacion = graduacion / 100; // Porcentaje
         //volumen = volumen * 10; // En mililitros
         SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
-        int peso = Integer.parseInt(data.getString("peso", ""));
-        int altura = Integer.parseInt(data.getString("altura", ""));
+        try {
+            int peso = Integer.parseInt(data.getString("peso", ""));
+            int altura = Integer.parseInt(data.getString("altura", ""));
+            TextView tasaText = findViewById(R.id.tasaTotal);
+            TextView precioText = findViewById(R.id.precioTotal);
+            double alcoholPuroIngerido = (bebida.getTasa() * bebida.getVol() * 0.8) / 10;
+            double h= (double) altura / 100;
+            Double masa = peso / Math.pow(h, 2);
+            double tasa = alcoholPuroIngerido / (peso * 0.7);
+            tasaTotal = tasaTotal + tasa;
+            precioTotal = precioTotal + bebida.getPrecio() / 100;
+            tasaText.setText(String.format("%.2f", tasaTotal));
+            precioText.setText(String.format("%s€", String.format("%.2f", precioTotal)));
+            setTasaColor(tasaTotal);
+        } catch (Exception e){
+            
+        }
 
-        TextView tasaText = findViewById(R.id.tasaTotal);
-        TextView precioText = findViewById(R.id.precioTotal);
-        double alcoholPuroIngerido = (bebida.getTasa() * bebida.getVol() * 0.8) / 10;
-        double h= (double) altura / 100;
-        Double masa = peso / Math.pow(h, 2);
-        double tasa = alcoholPuroIngerido / (peso * 0.7);
-        tasaTotal = tasaTotal + tasa;
-        precioTotal = precioTotal + bebida.getPrecio() / 100;
-        tasaText.setText(String.format("%.2f", tasaTotal));
-        precioText.setText(String.format("%s€", String.format("%.2f", precioTotal)));
-        setTasaColor(tasaTotal);
+
+
         //Log.i("LIST calculoTasa: ", "tasa:" + tasa + " masa:" + masa + " alcoholpuroingerido:" + alcoholPuroIngerido);
 
     }
@@ -137,9 +142,12 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
 
         String name = data.getString("name", "");
+        String edad = data.getString("edad", "");
+        String peso = data.getString("peso", "");
+        String altura = data.getString("altura", "");
         lapso = data.getInt("lapso", 0);
 
-        if(name.isEmpty()){
+        if(name.isEmpty() || edad.isEmpty() || peso.isEmpty() || altura.isEmpty()){
             bebidas.deleteDB(this);
             bebidas.LoadBebidasDB(this);
             runPerfil();
