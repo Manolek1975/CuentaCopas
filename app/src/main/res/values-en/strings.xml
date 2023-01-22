@@ -25,7 +25,7 @@
 
     <string name="name_hint">Name</string>
     <string name="edad_hint">Age</string>
-    <string name="peso_hint">weight (kg)</string>
+    <string name="peso_hint">Weight (kg)</string>
     <string name="altura_hint">Height (cm)</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
@@ -53,42 +53,45 @@
     <string name="todo">TODO</string>
 
     <string name="info">
-Approximate calculation of the alcohol rate. Expense control.\n\n
-Suggestions mailbox: cuentacopas2023@gmail.com\n\n
-Versión 1.0.3\n
-PHPTRONIC\n
-Manuel Domínguez 2023\n</string>
+        Approximate calculation of the alcohol rate. Expense control.\n\n
+        Suggestions mailbox: cuentacopas2023@gmail.com\n\n
+        Version 1.0.3\n
+        PHPTRONIC\n
+        Manuel Domínguez 2023\n
+    </string>
 
     <string name="ayuda_tittle">Count Coups</string>
 
     <string name="help">
-Once a drink has been consumed, press the button +\n
+        Once a drink has been consumed, press the button +\n
     </string>
 
     <string name="help2">
-Choose a drink from the list and the blood alcohol concentration will be displayed in the center text\n\n
-The period of time to reduce the alcohol level is 6 hours in optimal conditions, eating, drinking slowly and without smoking, consider increasing the period in other conditions.\n\n
-You can create and modify your own drinks by using the pencil button in the menu.\n\n
+        Choose a drink from the list and the blood alcohol concentration will be displayed in the center text\n\n
+        The period of time to reduce the alcohol level is 6 hours in optimal conditions, eating,
+        drinking slowly and without smoking, consider increasing the period in other conditions.\n\n
+        You can create and modify your own drinks by using the pencil button in the menu.\n\n
     </string>
 
     <string name="help3">
-Click on Create Drink to create a new drink, you will need to provide its degree of alcohol, volume in centiliters and its price in euros.\n\n
+        Click on Create Drink to create a new drink, you will need to provide its degree of alcohol,
+        volume in centiliters and its price in euros.\n\n
     </string>
 
     <string name="help4">
-To delete a drink simply tap the trash in the top right corner.
+        To delete a drink simply tap the trash in the top right corner.
     </string>
 
     <string name="help5">
-You can see a history of all drinks consumed since you installed the application in the summary icon.\n\n
+        You can see a history of all drinks consumed since you installed the application in the summary icon.\n\n
     </string>
 
     <string name="help6">
-Do not forget to modify your profile if you have gained or lost weight, the calculation of the rate is made based on your age, weight and height.
+        Do not forget to modify your profile if you have gained or lost weight, the calculation of
+        the rate is made based on your age, weight and height.
     </string>
 
     <string name="version">version</string>
-
     <string name="cerveza">cerveza</string>
     <string name="vino">vino</string>
     <string name="vermut">vermut</string>

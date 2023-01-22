@@ -80,13 +80,9 @@ public class MainActivity extends AppCompatActivity {
             precioText.setText(String.format("%s€", String.format("%.2f", precioTotal)));
             setTasaColor(tasaTotal);
         } catch (Exception e){
-            
+            e.printStackTrace();
         }
-
-
-
         //Log.i("LIST calculoTasa: ", "tasa:" + tasa + " masa:" + masa + " alcoholpuroingerido:" + alcoholPuroIngerido);
-
     }
 
     private void setTasaColor(Double tasa) {
